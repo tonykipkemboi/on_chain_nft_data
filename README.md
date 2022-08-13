@@ -16,10 +16,10 @@ My system setup:
 Clone the repository:
 
 ```
-git clone https://github.com/tonykipkemboi/on-chain-nft-data
+git clone https://github.com/tonykipkemboi/on_chain_nft_data
 ```
 ```
-cd on-chain-nft-data
+cd on_chain_nft_data
 ```
 Setup a `virtual environment` by running the following commands in your `windows terminal`:
 
@@ -41,7 +41,7 @@ You can tell the environment is active by looking at your terminal prompt.
 It will look something of the sort. Note the `venv` part: 
 
 ```
-(venv) computer:on-chain-data user$
+(venv) computer:on_chain_data user$
 ```
 
 Install the dependencies required to run the program by running this command:
