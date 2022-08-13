@@ -1,4 +1,3 @@
-from requests.models import HTTPError
 from helpers import *
 
 
@@ -72,7 +71,7 @@ def main():
 
     print('🌄 These are the percentage of unique non-SPAM token types you hold:\n{}'.format(
         clean_token_percentage.to_string()))
-    print('🌄These are the percentage of unique SPAM token types you hold:\n{}'.format(
+    print('🌄 These are the percentage of unique SPAM token types you hold:\n{}'.format(
         dirty_token_percentage.to_string()))
     print('##############################################')
 
