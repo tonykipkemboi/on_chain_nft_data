@@ -1,5 +1,5 @@
 from requests.models import HTTPError
-from app.helpers import *
+from helpers import *
 
 
 def main():
