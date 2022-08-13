@@ -19,14 +19,11 @@ def main():
     print()
     print('Grabbing your data...')
     print()
-    try:
-        not_spam, is_spam = get_nft_data(address)
-        print()
-        print('Data grab complete!')
-    except HTTPError as e:
-        print()
-        print('* Address might not have any NFTs. Confirm this manually on NFT marketplaces like OpenSea.')
-        status_code = e.response.status_code
+
+    not_spam, is_spam = get_nft_data(address)
+    print()
+    print('Data grab complete!')
+
     print()
     print('Data grab complete!')
 
