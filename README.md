@@ -18,6 +18,10 @@ Clone the repository:
 ```
 git clone https://github.com/tonykipkemboi/on_chain_nft_data
 ```
+Navigate (manually) to the file named `.env_example` and:
+- rename it to `.env`
+- add your [Alchemy API Key](https://www.alchemy.com/) in here `KEY="YOUR_ALCHEMY_API_KEY_GOES_HERE"`
+
 ```
 cd on_chain_nft_data
 ```
