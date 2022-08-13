@@ -7,7 +7,7 @@ The raw json data is normalized using `pandas.json_normalize` function and some 
 
 Here's an example of NFTs held by `vitalik.eth` as of `8/12/2022`
 
-[NFTs held by vitalik.eth](./vitalik_nft_data_snapshot.png)
+![NFTs held by vitalik.eth](./vitalik_nft_data_snapshot.png)
 
 ## Installation Steps
 My system setup:
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 Navigate to the file named `.env_example` and:
 - rename it to `.env`
-- add your ![Alchemy API Key](https://www.alchemy.com/) in here `KEY="YOUR_ALCHEMY_API_KEY_GOES_HERE"`
+- add your [Alchemy API Key](https://www.alchemy.com/) in here `KEY="YOUR_ALCHEMY_API_KEY_GOES_HERE"`
 
 Change directory into `app` folder to run the program as such;
 
@@ -59,7 +59,7 @@ cd app
 python runner.py
 ```
 Alternatively, if you would like to play with the app in `Jupyter Notebook`, navigate to the root of the directory and type the command
-```jupyter notebook``` in your terminal/command line. This assumes you have Jupyter Notebook configured in yor system, if not, consider downloading ![Anaconda](https://www.anaconda.com/)
+```jupyter notebook``` in your terminal/command line. This assumes you have Jupyter Notebook configured in yor system, if not, consider downloading [Anaconda](https://www.anaconda.com/)
 
 ## Running the program
 
@@ -81,7 +81,7 @@ deactivate
 
 More info in this file.
 
-[TODO](./on_chain_data/TODO.md)
+![TODO](./on_chain_data/TODO.md)
 
 - The query for owners with a lot of NFTs is taking a couple of minutes to run, here's stats for running `vitalik.eth`
   ``` 
