@@ -54,17 +54,17 @@ Navigate to the file named `.env_example` and:
 - rename it to `.env`
 - add your [Alchemy API Key](https://www.alchemy.com/) in here `KEY="YOUR_ALCHEMY_API_KEY_GOES_HERE"`
 
-Change directory into `app` folder to run the program as such;
 
+## Running the program
+
+Change directory into `app` folder to run the program as such;
 
 - Change directory to app
 ```
 cd app
 ```
 
-## Running the program
-
-Make sure you're in the correct directory `runner.py`
+Run the program
 
 ```
 python runner.py
