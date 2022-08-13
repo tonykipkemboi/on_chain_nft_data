@@ -103,7 +103,6 @@ def validate_address(address: str) -> str:
       address: an address/ENS with the correct format
     """
 
-    # if ENS is >= 7 digit and ends with '.eth', return
     if address:
         # check if address is in hexadecimal format
         if hexadecimal_address(address):
@@ -119,6 +118,7 @@ def validate_address(address: str) -> str:
         # check ENS name validity
         print('Checking if ENS name...')
         if len(address) >= 7 and address.split('.')[1] == 'eth':
+            print('ENS name is valid!')
             return address
         else:
             print('Invalid ENS name! Try again.')
@@ -233,7 +233,7 @@ def get_nft_data(user_address) -> json:
                 print("Next page found, downloading the next batch(100) of nft data...")
                 print()
                 print('pageKey:', page)
-                # print('url:', y_url)
+
                 print()
                 response = requests.get(
                     '{}&pageKey={}'.format(pagination_url, page), headers=headers)

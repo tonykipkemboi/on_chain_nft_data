@@ -1,3 +1,4 @@
+from requests import HTTPError
 from helpers import *
 
 
@@ -17,21 +18,16 @@ def main():
     # get data after all checks complete on address
     print()
     print('Grabbing your data...')
-    print()
-
     not_spam, is_spam = get_nft_data(address)
-    print()
     print('Data grab complete!')
 
+    # normalizing and transforming data
     print()
-    print('Data grab complete!')
-
-    print()
-    print('Cleaning your non-spam nft data...')
+    print('Transforming your non-spam nft data...')
     clean_bag = normalize_data(not_spam)
 
     print()
-    print('Cleaning your spam nft data...')
+    print('Transforming your spam nft data...')
     dirty_bag = normalize_data(is_spam)
 
     # filter and retain spam nfts
