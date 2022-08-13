@@ -62,13 +62,6 @@ Change directory into `app` folder to run the program as such;
 cd app
 ```
 
-- Run program
-```
-python runner.py
-```
-Alternatively, if you would like to play with the app in `Jupyter Notebook`, navigate to the root of the directory and type the command
-```jupyter notebook``` in your terminal/command line. This assumes you have Jupyter Notebook configured in yor system, if not, consider downloading [Anaconda](https://www.anaconda.com/)
-
 ## Running the program
 
 Make sure you're in the correct directory `runner.py`
@@ -76,6 +69,9 @@ Make sure you're in the correct directory `runner.py`
 ```
 python runner.py
 ```
+
+Alternatively, if you would like to play with the app in `Jupyter Notebook`, navigate to the root of the directory and type the command
+```jupyter notebook``` in your terminal/command line. This assumes you have Jupyter Notebook configured in yor system, if not, consider downloading [Anaconda](https://www.anaconda.com/)
 
 For the `jupyter notebook`, run cells using `Ctrl + Enter` or using the run button on the UI.
 
