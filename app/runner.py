@@ -1,4 +1,3 @@
-from requests import HTTPError
 from helpers import *
 
 
@@ -17,9 +16,9 @@ def main():
 
     # get data after all checks complete on address
     print()
-    print('Grabbing your data...')
+    print('Downloading your data...')
     not_spam, is_spam = get_nft_data(address)
-    print('Data grab complete!')
+    print('Data download complete!')
 
     # normalizing and transforming data
     print()

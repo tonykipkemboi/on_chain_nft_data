@@ -1,8 +1,14 @@
-## On-chain NFT Data
+# On-chain NFT Data
 This code pulls on-chain NFT data for a given wallet address or ENS name. 
-The raw json data is normalized using `pandas.json_normalize` function and some simple analysis run on the data:
-- How many SPAM vs non-SPAM NFTs are owned by the address
-- Percentage of each token type (i.e. ERC721/ERC1155/UNKNOWN)
+
+The raw json data is normalized using `pandas.json_normalize` function and 
+some simple analysis ran on the data based on the following user questions:
+
+- How many SPAM and non-SPAM NFTs do I own?
+  
+- What percentage of each token type (i.e. ERC721/ERC1155/UNKNOWN) do I own?
+  
+There's an option to download your data as well, if you like!
 
 Here's an example of NFTs held by `vitalik.eth` as of `8/12/2022`
 
@@ -18,27 +24,40 @@ Clone the repository:
 ```
 git clone https://github.com/tonykipkemboi/on_chain_nft_data
 ```
-Navigate (manually) to the file named `.env_example` and:
-- rename it to `.env`
-- add your [Alchemy API Key](https://www.alchemy.com/) in here `ALCHEMY_API_KEY ="YOUR_ALCHEMY_API_KEY_GOES_HERE"`
 
+Go into the directory.
 ```
 cd on_chain_nft_data
 ```
+
+You have the option of running this app on the command line or opening it up in your favorite IDE (Integrated Development Environment).
+Whichever option you choose, make sure to follow configure the below correctly.
+
+**This next step is CRUCIAL, make sure to follow the instructions carefully**
+
+Navigate to the file named `.env_example` and:
+```
+- Rename ".env_example" file to ".env"
+
+- Add your [Alchemy API Key](https://www.alchemy.com/) in in between the quites; ALCHEMY_API_KEY ="YOUR_ALCHEMY_API_KEY_GOES_HERE"
+
+- Save the file!
+```
+
 Setup a `virtual environment` by running the following commands in your `windows terminal`:
 
 
-- This will create a on-chain-nft-data/venv folder
+- This will create a on-chain-nft-data/venv folder.
 ```
 python -m venv venv
 ```
 
-- Activate venv with the following command 
+- Activate venv with the following command (different variations depending on your OS(Operating System))
 ```
 .\venv\Scripts\activate
 ```
 
-- Add venv to your .gitignore
+- Add venv to your .gitignore file if not added already.
 
 
 You can tell the environment is active by looking at your terminal prompt. 
@@ -54,12 +73,8 @@ Install the dependencies required to run the program by running this command:
 pip install -r requirements.txt
 ```
 
-Navigate to the file named `.env_example` and:
-- rename it to `.env`
-- add your [Alchemy API Key](https://www.alchemy.com/) in here `KEY="YOUR_ALCHEMY_API_KEY_GOES_HERE"`
 
-
-## Running the program
+## Running the program on the Command Line 
 
 Change directory into `app` folder to run the program as such;
 
@@ -68,22 +83,37 @@ Change directory into `app` folder to run the program as such;
 cd app
 ```
 
-Run the program
+Run the program;
 
 ```
 python runner.py
 ```
 
-Alternatively, if you would like to play with the app in `Jupyter Notebook`, navigate to the root of the directory and type the command
-```jupyter notebook``` in your terminal/command line. This assumes you have Jupyter Notebook configured in yor system, if not, consider downloading [Anaconda](https://www.anaconda.com/)
-
-For the `jupyter notebook`, run cells using `Ctrl + Enter` or using the run button on the UI.
-
-After you're through and ready to close, `deactivate` the virtual environment by typing he following command
+After you're through and ready to close the terminal, `deactivate` the virtual environment by typing he following command;
 
 ``` 
 deactivate
 ```
+
+## Running the program on Jupyter Notebook
+
+Alternatively, if you would like to play with the app in `Jupyter Notebook`, navigate to the root of the directory and type the following commands in your terminal/command line;
+
+- Running the following command will create a kernel that can be used to run jupyter notebook commands inside the virtual environment.
+  
+``` 
+ipython kernel install --user --name=venv
+```
+- Open Jupyter Notebook.
+- 
+```
+jupyter notebook
+``` 
+
+This assumes you have Jupyter Notebook configured in yor system, if not, consider downloading [Anaconda](https://www.anaconda.com/)
+
+For the `jupyter notebook`, run the cell using `Ctrl + Enter` or using the run button on the UI.
+
 
 ## Improvements & Next Steps
 
