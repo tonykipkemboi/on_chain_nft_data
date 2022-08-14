@@ -39,10 +39,12 @@ Navigate to the file named `.env_example` and:
 ```
 - Rename ".env_example" file to ".env"
 
-- Add your [Alchemy API Key](https://www.alchemy.com/) in in between the quotes; ALCHEMY_API_KEY ="YOUR_ALCHEMY_API_KEY_GOES_HERE"
+- Add your in between the quotes; ALCHEMY_API_KEY ="YOUR_ALCHEMY_API_KEY_GOES_HERE"
 
 - Save the file!
 ```
+
+Get your API here if you don't have one [Alchemy API Key](https://www.alchemy.com/)
 
 Setup a `virtual environment` by running the following commands in your `windows terminal`:
 
