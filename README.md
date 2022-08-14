@@ -39,7 +39,7 @@ Navigate to the file named `.env_example` and:
 ```
 - Rename ".env_example" file to ".env"
 
-- Add your [Alchemy API Key](https://www.alchemy.com/) in in between the quites; ALCHEMY_API_KEY ="YOUR_ALCHEMY_API_KEY_GOES_HERE"
+- Add your [Alchemy API Key](https://www.alchemy.com/) in in between the quotes; ALCHEMY_API_KEY ="YOUR_ALCHEMY_API_KEY_GOES_HERE"
 
 - Save the file!
 ```
