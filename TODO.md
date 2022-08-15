@@ -5,7 +5,6 @@
 - Refactor the code
 - Explore using concurrent requests to fetch the data
 - Better logging
-- Improvesetup process
-- Implement the `getFloorPrice` API to get floor price for the owners 
-  nfts using the `token_contract` data from dataframe
+- Improve setup process
+- Implement the `getFloorPrice` API to get floor price for the owners nfts using the `token_contract` data from dataframe
 - Create Streamlit app for users to ineract with their data intuitively
