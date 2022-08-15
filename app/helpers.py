@@ -162,6 +162,36 @@ def pagination_api_url(address: str) -> str:
         sys.exit()
 
 
+def floor_price_api(contract: str) -> str:
+    """Alchemy API to get NFT Floor Price by Contract Address.
+
+    parametes:
+    ----------
+    contract: address for the NFT collection
+
+    Return:
+    -------
+    json file: floorprice for the contract in ETH, collection URI, 
+                and time of retrieval
+    """
+
+    # API key has been checked previously
+    api_key = os.getenv('ALCHEMY_API_KEY')
+
+    # if valid, proceed and assign to URL
+    contract = validate_address(contract)
+
+    if contract:
+        # floor price url
+        contract_api_url = f"https://eth-mainnet.g.alchemy.com/nft/v2/{api_key}/getFloorPrice?contractAddress={contract}"
+
+        return contract_api_url
+
+    else:
+        print('Contract address not supplied! Try again.')
+        sys.exit()
+
+
 def get_nft_data(user_address) -> json:
     """Gets NFT data from Alchemy by address.
 
@@ -256,6 +286,38 @@ def get_nft_data(user_address) -> json:
     is_spam = get_data(spam_url, paginate_spam_url, spam_data)
 
     return not_spam, is_spam
+
+
+def get_floor_price(df: pd.DataFrame) -> pd.DataFrame:
+    """Get floor price data for give NFT contract address.
+    """
+
+    # displays prices in 4dp
+    pd.options.display.float_format = '{:.4f}'.format
+
+    # extract contract addresses of all nfts data
+    nft_contracts = df['contract_address']
+
+    # generate payload request urls for each contract address
+    url = [floor_price_api(nft_address) for nft_address in nft_contracts]
+    headers = {"Accept": "application/json"}
+
+    # submit query and store response in a list
+    output = [(requests.get(i, headers=headers).json()) for i in url]
+
+    # normalize output and refplace NaN values with "Not Available"
+    data = pd.json_normalize(output).fillna('Not Available')
+
+    # rename the columns
+    data = data.rename(columns={'openSea.floorPrice': 'opensea_floorprice',	'openSea.priceCurrency': 'opensea_currency',
+                                'looksRare.floorPrice': 'looksrare_floorprice',	'looksRare.priceCurrency': 'looksrare_currency',
+                                })
+
+    # pick price and currency type columns
+    data = data[['opensea_floorprice', 'opensea_currency',
+                 'looksrare_floorprice', 'looksrare_currency', ]].copy()
+
+    return data
 
 
 def normalize_data(results: list) -> pd.DataFrame:

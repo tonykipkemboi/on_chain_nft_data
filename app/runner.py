@@ -33,6 +33,10 @@ def main():
     dirty_tokens = pd.concat([clean_bag, dirty_bag]
                              ).drop_duplicates(keep=False)
 
+    # download floor price data
+    floor_price = get_floor_price(clean_bag)
+    clean_bag = pd.concat([clean_bag, floor_price], axis=1)
+
     # count of NFTs; non-spammy ones
     clean_count = len(clean_bag)
 
